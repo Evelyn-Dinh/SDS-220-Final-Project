@@ -1,13 +1,9 @@
 ---
 title: "SDS 220 Final Project - Written Report"
-author: "EVELYN DINH & SOPHIE BIDERMAN"
+author: "Evelyn Dinh & Sophie Biderman"
 format: pdf
 editor: source
 ---
-
-## Introduction
-
-## Exploratory Data Analysis
 
 ```{r}
 #| include: false
@@ -17,13 +13,54 @@ editor: source
 
 library(tidyverse)
 library(janitor)
+library(readr)
 
-sleep_productivity_stress <- read.csv("sleep_productivity_stress.csv") |>
+sleep_productivity_stress <- read_csv("sleep_productivity_stress.csv") |>
   clean_names() |>
   rename("early_bird_or_night_owl" = "are_you_more_of_an_early_bird_or_a_night_owl",
          "weekday_sleep_average" = "how_long_do_you_sleep_during_weekdays_on_average" ,
-         "avg_productivity_level" = "how_productive_are_you_during_weekdays_on_average_rate_your_productivity_on_the_following_scales_1_not_productive_2_4_somewhat_productive_5_very_productive",
-         "avg_stress_level" = "on_average_how_stressed_do_you_feel_during_weekdays_rate_your_stress_on_the_following_scales_1_not_stressed_2_4_somewhat_stressed_5_very_stressed")
+         "weekday_productivity_level" = "how_productive_are_you_during_weekdays_on_average_rate_your_productivity_on_the_following_scales_1_not_productive_2_4_somewhat_productive_5_very_productive",
+         "weekday_stress_level" = "on_average_how_stressed_do_you_feel_during_weekdays_rate_your_stress_on_the_following_scales_1_not_stressed_2_4_somewhat_stressed_5_very_stressed") |>
+  select(weekday_sleep_average,
+         weekday_productivity_level)
+```
+
+## Introduction
+
+## Exploratory Data Analysis
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: sleep_productivity
+#| tbl-cap: "Sleep Duration vs. Productivity Level"
+#| echo: false
+
+sleep_productivity <- table(sleep_productivity_stress)
+knitr::kable(sleep_productivity)
+```
+### Hypotheses
+
+### Conditions
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+chi_square_test <- chisq.test(sleep_productivity)
+expected_counts <- chi_square_test$expected
+knitr::kable(round(expected_counts, 2))
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+print(chi_square_test)
 ```
 
 ## Results
