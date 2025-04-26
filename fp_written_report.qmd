@@ -2,7 +2,7 @@
 title: "SDS 220 Final Project - Written Report"
 author: "EVELYN DINH & SOPHIE BIDERMAN"
 format: pdf
-editor: visual
+editor: source
 ---
 
 ## INTRODUCTION
