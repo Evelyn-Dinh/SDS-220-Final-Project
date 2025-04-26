@@ -169,6 +169,10 @@ sleep_productivity_stress |>
 #| message: false
 #| warning: false
 
+#| label: sleep_productivity
+#| tbl-cap: "Sleep Duration vs. Productivity Level Expected Counts"
+#| echo: false
+
 chi_square_test <- chisq.test(sleep_productivity)
 expected_counts <- chi_square_test$expected
 knitr::kable(round(expected_counts, 2))
@@ -237,6 +241,10 @@ sleep_productivity_stress |>
 #| echo: false
 #| message: false
 #| warning: false
+
+#| label: sleep_productivity
+#| tbl-cap: "Sleep Duration vs. Stress Level Expected Counts"
+#| echo: false
 
 chi_square_test_2 <- chisq.test(sleep_stress)
 expected_counts_2 <- chi_square_test_2$expected
