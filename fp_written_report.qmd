@@ -3,6 +3,8 @@ title: "SDS 220 Final Project - Written Report"
 author: "Evelyn Dinh & Sophie Biderman"
 format: pdf
 editor: source
+bibliography: citation.bib
+csl: apa.csl
 ---
 
 ```{r}
