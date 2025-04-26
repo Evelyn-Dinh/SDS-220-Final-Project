@@ -111,6 +111,7 @@ sleep_productivity_stress |>
     fill = "Weekday Stress Level"
   )
 ```
+## Results
 
 ### Sleep Duration vs. Productivity Level
 
@@ -260,8 +261,6 @@ knitr::kable(round(expected_counts_2, 2))
 
 print(chi_square_test_2)
 ```
-
-## Results
 
 ## Discussion
 
