@@ -5,21 +5,14 @@ format: pdf
 editor: source
 ---
 
-## INTRODUCTION
+## Introduction
 
+## Exploratory Data Analysis
 
-## EXPLORATORY DATA ANALYSIS
+## Results
 
+## Discussion
 
-## RESULTS
+## Appendix
 
-
-## DISCUSSION
-
-
-## APPENDIX
-
-
-## BIBLIOGRAPHY
-
-
+## Bibliography
