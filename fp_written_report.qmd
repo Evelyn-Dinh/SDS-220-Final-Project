@@ -38,6 +38,80 @@ sleep_stress <- sleep_productivity_stress |>
 
 ## Exploratory Data Analysis
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: sleep
+#| fig-cap: "Weekday Sleep Duration"
+#| echo: false
+
+sleep_productivity_stress |>
+  mutate(weekday_sleep_average = fct_relevel(weekday_sleep_average, 
+            "Less than 5 hours", "5-7 hours", "More than 7 hours")) |>
+  ggplot(aes(x = weekday_sleep_average,
+             fill = weekday_sleep_average)) +
+  geom_bar() +
+  labs(
+    title = "Weekday Sleep Duration of College Students",
+    subtitle = "A Survey of Sleep Duration of College Students",
+    caption = "Source: Self-Collected Survey",
+    x = "Weekday Sleep Duration",
+    y = "Count",
+    fill = "Weekday Sleep Duration"
+  )
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: productivity
+#| fig-cap: "Weekday Productivity Level"
+#| echo: false
+
+sleep_productivity_stress |>
+  ggplot(aes(x = weekday_productivity_level,
+             fill = weekday_productivity_level)) +
+  geom_bar() +
+  theme(
+    axis.text = element_text(size = 7.5)
+  ) +
+  labs(
+    title = "Weekday Productivity Level of College Students",
+    subtitle = "A Survey of Productivity of College Students",
+    caption = "Source: Self-Collected Survey",
+    x = "Weekday Productivity Level",
+    y = "Count",
+    fill = "Weekday Productivity Level"
+  )
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: stress
+#| fig-cap: "Weekday Stress Level"
+#| echo: false
+
+sleep_productivity_stress |>
+  ggplot(aes(x = weekday_stress_level,
+             fill = weekday_stress_level)) +
+  geom_bar() +
+  labs(
+    title = "Weekday Stress Level of College Students",
+    subtitle = "A Survey of Stress of College Students",
+    caption = "Source: Self-Collected Survey",
+    x = "Weekday Stress Level",
+    y = "Count",
+    fill = "Weekday Stress Level"
+  )
+```
+
 ### Sleep Duration vs. Productivity Level
 
 ```{r}
@@ -51,6 +125,32 @@ sleep_stress <- sleep_productivity_stress |>
 
 sleep_productivity <- table(sleep_productivity)
 knitr::kable(sleep_productivity)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: sleep_productivity
+#| fig-cap: "Sleep Duration vs. Productivity Level"
+#| echo: false
+
+sleep_productivity_stress |>
+  ggplot(aes(x = weekday_productivity_level,
+             fill = weekday_sleep_average)) +
+  geom_bar() +
+  theme(
+    axis.text = element_text(size = 7.5)
+  ) +
+  labs(
+    title = "Sleep Duration vs. Productivity Level",
+    subtitle = "A Survey of Sleep Duration vs. Productivity Level of College Students",
+    caption = "Source: Self-Collected Survey",
+    x = "Weekday Productivity Level",
+    y = "Count",
+    fill = "Weekday Sleep Duration"
+  )
 ```
 
 #### Hypotheses
@@ -97,6 +197,29 @@ print(chi_square_test)
 
 sleep_stress <- table(sleep_stress)
 knitr::kable(sleep_stress)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: sleep_stress
+#| fig-cap: "Sleep Duration vs. Stress Level"
+#| echo: false
+
+sleep_productivity_stress |>
+  ggplot(aes(x = weekday_stress_level,
+             fill = weekday_sleep_average)) +
+  geom_bar() +
+  labs(
+    title = "Sleep Duration vs. Stress Level",
+    subtitle = "A Survey of Sleep Duration vs. Stress Level of College Students",
+    caption = "Source: Self-Collected Survey",
+    x = "Weekday Stress Level",
+    y = "Count",
+    fill = "Weekday Sleep Duration"
+  )
 ```
 
 #### Hypotheses
