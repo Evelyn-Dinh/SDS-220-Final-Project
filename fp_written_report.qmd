@@ -20,14 +20,23 @@ sleep_productivity_stress <- read_csv("sleep_productivity_stress.csv") |>
   rename("early_bird_or_night_owl" = "are_you_more_of_an_early_bird_or_a_night_owl",
          "weekday_sleep_average" = "how_long_do_you_sleep_during_weekdays_on_average" ,
          "weekday_productivity_level" = "how_productive_are_you_during_weekdays_on_average_rate_your_productivity_on_the_following_scales_1_not_productive_2_4_somewhat_productive_5_very_productive",
-         "weekday_stress_level" = "on_average_how_stressed_do_you_feel_during_weekdays_rate_your_stress_on_the_following_scales_1_not_stressed_2_4_somewhat_stressed_5_very_stressed") |>
+         "weekday_stress_level" = "on_average_how_stressed_do_you_feel_during_weekdays_rate_your_stress_on_the_following_scales_1_not_stressed_2_4_somewhat_stressed_5_very_stressed")
+  
+sleep_productivity <- sleep_productivity_stress |>  
   select(weekday_sleep_average,
          weekday_productivity_level)
+
+sleep_stress <- sleep_productivity_stress |>
+  select(weekday_sleep_average,
+         weekday_stress_level)
 ```
 
 ## Introduction
 
+
 ## Exploratory Data Analysis
+
+### Sleep Duration vs. Productivity Level
 
 ```{r}
 #| echo: false
@@ -38,12 +47,20 @@ sleep_productivity_stress <- read_csv("sleep_productivity_stress.csv") |>
 #| tbl-cap: "Sleep Duration vs. Productivity Level"
 #| echo: false
 
-sleep_productivity <- table(sleep_productivity_stress)
+sleep_productivity <- table(sleep_productivity)
 knitr::kable(sleep_productivity)
 ```
-### Hypotheses
 
-### Conditions
+#### Hypotheses
+
+- $H_0$: Sleep duration and productivity level are independent.
+- $H_A$: Sleep duration and productivity level are related.
+
+#### Conditions
+
+1. **Independence**
+
+2. **Large Sample**
 
 ```{r}
 #| echo: false
@@ -55,12 +72,60 @@ expected_counts <- chi_square_test$expected
 knitr::kable(round(expected_counts, 2))
 ```
 
+#### Chi-Square Testing
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 
 print(chi_square_test)
+```
+
+### Sleep Duration vs. Stress Level
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+#| label: sleep_stress
+#| tbl-cap: "Sleep Duration vs. Stress Level"
+#| echo: false
+
+sleep_stress <- table(sleep_stress)
+knitr::kable(sleep_stress)
+```
+
+#### Hypotheses
+
+- $H_0$: Sleep duration and stress level are independent.
+- $H_A$: Sleep duration and stress level are related.
+
+#### Conditions
+
+1. **Independence**
+
+2. **Large Sample**
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+chi_square_test_2 <- chisq.test(sleep_stress)
+expected_counts_2 <- chi_square_test_2$expected
+knitr::kable(round(expected_counts_2, 2))
+```
+
+#### Chi-Square Testing
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+print(chi_square_test_2)
 ```
 
 ## Results
