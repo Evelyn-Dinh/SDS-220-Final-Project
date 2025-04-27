@@ -1,66 +1,93 @@
-"Timestamp","Class Year","Major Division","Are you more of an early bird or a night owl?","How long do you sleep during weekdays, on average?","How productive are you during weekdays, on average?
+Class Year,Major Division,Are you more of an early bird or a night owl?,"How long do you sleep during weekdays, on average?","How productive are you during weekdays, on average?
 Rate your productivity on the following scales: 1 = not productive, 2-4 = somewhat productive, 5 = very productive","On average, how stressed do you feel during weekdays?
 Rate your stress on the following scales: 1 = not stressed, 2-4 = somewhat stressed, 5 = very stressed"
-"2025/04/24 2:43:00 PM AST","2028","Natural Science;Interdivisional","Night Owl","5-7 hours","Very productive","Somewhat stressed"
-"2025/04/24 2:45:13 PM AST","2028","Natural Science","Early Bird","5-7 hours","Somewhat productive","Not stressed"
-"2025/04/24 2:45:46 PM AST","2028","Social Science","Night Owl","More than 7 hours","Very productive","Not stressed"
-"2025/04/24 2:52:22 PM AST","2025","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Not stressed"
-"2025/04/24 2:52:38 PM AST","2026","Humanities","Early Bird","More than 7 hours","Very productive","Not stressed"
-"2025/04/24 3:01:45 PM AST","2026","Social Science;Natural Science","Early Bird","Less than 5 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 3:02:09 PM AST","2026","Interdivisional","Night Owl","More than 7 hours","Not productive","Very stressed"
-"2025/04/24 3:03:56 PM AST","2028","Social Science;Natural Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 3:05:50 PM AST","2028","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/24 3:06:35 PM AST","2028","Interdivisional","Early Bird","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/24 3:07:08 PM AST","2025","Social Science;Natural Science;Interdivisional","Night Owl","5-7 hours","Very productive","Somewhat stressed"
-"2025/04/24 3:09:15 PM AST","2028","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 3:09:38 PM AST","2025","Interdivisional","Night Owl","More than 7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 3:10:03 PM AST","2027","Social Science","Night Owl","5-7 hours","Not productive","Somewhat stressed"
-"2025/04/24 3:12:56 PM AST","2028","Interdivisional","Night Owl","5-7 hours","Very productive","Somewhat stressed"
-"2025/04/24 3:20:53 PM AST","2027","Natural Science","Night Owl","More than 7 hours","Somewhat productive","Very stressed"
-"2025/04/24 3:23:22 PM AST","2028","Natural Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 3:24:56 PM AST","2028","Natural Science","Early Bird","5-7 hours","Very productive","Somewhat stressed"
-"2025/04/24 3:28:18 PM AST","2027","Social Science","Early Bird","5-7 hours","Very productive","Very stressed"
-"2025/04/24 3:34:41 PM AST","2027","Natural Science","Night Owl","Less than 5 hours","Somewhat productive","Not stressed"
-"2025/04/24 3:40:16 PM AST","2025","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/24 3:40:21 PM AST","2028","Humanities","Night Owl","More than 7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 3:46:53 PM AST","2027","Natural Science","Early Bird","More than 7 hours","Not productive","Very stressed"
-"2025/04/24 3:56:55 PM AST","2025","Social Science","Night Owl","5-7 hours","Very productive","Somewhat stressed"
-"2025/04/24 3:58:44 PM AST","2027","Natural Science","Early Bird","More than 7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 4:05:56 PM AST","2027","Natural Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 4:13:43 PM AST","2026","Natural Science","Early Bird","Less than 5 hours","Very productive","Very stressed"
-"2025/04/24 4:15:49 PM AST","2026","Social Science;Natural Science","Night Owl","More than 7 hours","Very productive","Not stressed"
-"2025/04/24 4:18:49 PM AST","2026","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 4:21:56 PM AST","2026","Humanities","Night Owl","5-7 hours","Not productive","Very stressed"
-"2025/04/24 4:32:53 PM AST","2027","Humanities","Night Owl","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/24 4:34:44 PM AST","2026","Social Science","Early Bird","More than 7 hours","Very productive","Very stressed"
-"2025/04/24 4:35:57 PM AST","2028","Humanities","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 4:39:18 PM AST","2027","Interdivisional","Early Bird","More than 7 hours","Very productive","Somewhat stressed"
-"2025/04/24 4:44:40 PM AST","2025","Natural Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 6:22:12 PM AST","2026","Humanities","Night Owl","Less than 5 hours","Not productive","Very stressed"
-"2025/04/24 6:34:58 PM AST","2027","Humanities","Night Owl","More than 7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 6:40:09 PM AST","2027","Humanities;Social Science","Early Bird","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 8:33:40 PM AST","2028","Humanities","Night Owl","Less than 5 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 9:04:33 PM AST","2027","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 9:09:37 PM AST","2026","Social Science","Night Owl","More than 7 hours","Somewhat productive","Very stressed"
-"2025/04/24 9:18:46 PM AST","2025","Humanities","Night Owl","5-7 hours","Not productive","Somewhat stressed"
-"2025/04/24 9:29:41 PM AST","2028","","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 9:33:05 PM AST","2026","Social Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 9:49:52 PM AST","2027","Natural Science","Early Bird","More than 7 hours","Not productive","Somewhat stressed"
-"2025/04/24 10:03:55 PM AST","2027","Humanities","Night Owl","Less than 5 hours","Somewhat productive","Very stressed"
-"2025/04/24 10:24:24 PM AST","2027","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/24 10:47:06 PM AST","2025","Humanities;Natural Science","Early Bird","5-7 hours","Very productive","Very stressed"
-"2025/04/24 10:58:28 PM AST","2025","Interdivisional","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/25 1:00:03 AM AST","2026","Social Science","Night Owl","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/25 5:17:10 AM AST","2026","Social Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/25 6:39:43 AM AST","2028","Social Science;Natural Science","Early Bird","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/25 6:53:43 AM AST","2026","Social Science","Early Bird","5-7 hours","Somewhat productive","Very stressed"
-"2025/04/25 7:02:00 AM AST","2027","Social Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/25 7:26:34 AM AST","2025","Humanities;Interdivisional","Early Bird","More than 7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/25 7:34:36 AM AST","2025","Natural Science","Night Owl","5-7 hours","Not productive","Somewhat stressed"
-"2025/04/25 8:27:11 AM AST","2028","Social Science","Early Bird","More than 7 hours","Very productive","Very stressed"
-"2025/04/25 8:39:27 AM AST","2027","Social Science","Night Owl","5-7 hours","Not productive","Somewhat stressed"
-"2025/04/25 9:12:16 AM AST","2028","Humanities;Social Science","Night Owl","More than 7 hours","Somewhat productive","Very stressed"
-"2025/04/25 11:42:27 AM AST","2028","Social Science","Night Owl","5-7 hours","Somewhat productive","Somewhat stressed"
-"2025/04/25 12:12:32 PM AST","2025","Social Science","Night Owl","5-7 hours","Very productive","Somewhat stressed"
-"2025/04/25 8:07:42 PM AST","2027","Natural Science","Early Bird","More than 7 hours","Very productive","Very stressed"
-"2025/04/25 8:45:04 PM AST","2027","Social Science","Night Owl","5-7 hours","Not productive","Very stressed"
+2028,"Natural Science, Interdivisional",Night Owl,5-7 hours,Very productive,Somewhat stressed
+2028,Natural Science,Early Bird,5-7 hours,Somewhat productive,Not stressed
+2028,Social Science,Night Owl,More than 7 hours,Very productive,Not stressed
+2025,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Not stressed
+2026,Humanities,Early Bird,More than 7 hours,Very productive,Not stressed
+2026,"Social Science, Natural Science",Early Bird,Less than 5 hours,Somewhat productive,Somewhat stressed
+2026,Interdivisional,Night Owl,More than 7 hours,Not productive,Very stressed
+2028,"Social Science, Natural Science",Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2028,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Very stressed
+2028,Interdivisional,Early Bird,5-7 hours,Somewhat productive,Very stressed
+2025,"Social Science, Natural Science, Interdivisional",Night Owl,5-7 hours,Very productive,Somewhat stressed
+2028,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2025,Interdivisional,Night Owl,More than 7 hours,Somewhat productive,Somewhat stressed
+2027,Social Science,Night Owl,5-7 hours,Not productive,Somewhat stressed
+2028,Interdivisional,Night Owl,5-7 hours,Very productive,Somewhat stressed
+2027,Natural Science,Night Owl,More than 7 hours,Somewhat productive,Very stressed
+2028,Natural Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2028,Natural Science,Early Bird,5-7 hours,Very productive,Somewhat stressed
+2027,Social Science,Early Bird,5-7 hours,Very productive,Very stressed
+2027,Natural Science,Night Owl,Less than 5 hours,Somewhat productive,Not stressed
+2025,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Very stressed
+2028,Humanities,Night Owl,More than 7 hours,Somewhat productive,Somewhat stressed
+2027,Natural Science,Early Bird,More than 7 hours,Not productive,Very stressed
+2025,Social Science,Night Owl,5-7 hours,Very productive,Somewhat stressed
+2027,Natural Science,Early Bird,More than 7 hours,Somewhat productive,Somewhat stressed
+2027,Natural Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Natural Science,Early Bird,Less than 5 hours,Very productive,Very stressed
+2026,"Social Science, Natural Science",Night Owl,More than 7 hours,Very productive,Not stressed
+2026,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Humanities,Night Owl,5-7 hours,Not productive,Very stressed
+2027,Humanities,Night Owl,5-7 hours,Somewhat productive,Very stressed
+2026,Social Science,Early Bird,More than 7 hours,Very productive,Very stressed
+2028,Humanities,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2027,Interdivisional,Early Bird,More than 7 hours,Very productive,Somewhat stressed
+2025,Natural Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Humanities,Night Owl,Less than 5 hours,Not productive,Very stressed
+2027,Humanities,Night Owl,More than 7 hours,Somewhat productive,Somewhat stressed
+2027,"Humanities, Social Science",Early Bird,5-7 hours,Somewhat productive,Somewhat stressed
+2028,Humanities,Night Owl,Less than 5 hours,Somewhat productive,Somewhat stressed
+2027,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Social Science,Night Owl,More than 7 hours,Somewhat productive,Very stressed
+2025,Humanities,Night Owl,5-7 hours,Not productive,Somewhat stressed
+2028,,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Social Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2027,Natural Science,Early Bird,More than 7 hours,Not productive,Somewhat stressed
+2027,Humanities,Night Owl,Less than 5 hours,Somewhat productive,Very stressed
+2027,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2025,"Humanities, Natural Science",Early Bird,5-7 hours,Very productive,Very stressed
+2025,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Social Science,Night Owl,5-7 hours,Somewhat productive,Very stressed
+2026,Social Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2028,"Social Science, Natural Science",Early Bird,5-7 hours,Somewhat productive,Very stressed
+2026,Social Science,Early Bird,5-7 hours,Somewhat productive,Very stressed
+2027,Social Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2025,"Humanities, Interdivisional",Early Bird,More than 7 hours,Somewhat productive,Somewhat stressed
+2025,Natural Science,Night Owl,5-7 hours,Not productive,Somewhat stressed
+2028,Social Science,Early Bird,More than 7 hours,Very productive,Very stressed
+2027,Social Science,Night Owl,5-7 hours,Not productive,Somewhat stressed
+2028,"Humanities, Social Science",Night Owl,More than 7 hours,Somewhat productive,Very stressed
+2028,Social Science,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2025,Social Science,Night Owl,5-7 hours,Very productive,Somewhat stressed
+2027,Natural Science,Early Bird,More than 7 hours,Very productive,Very stressed
+2027,Social Science,Night Owl,5-7 hours,Not productive,Very stressed
+2028,Natural Science,Night Owl,Less than 5 hours,Somewhat productive,Somewhat stressed
+,,Early Bird,More than 7 hours,Not productive,Very stressed
+,,Night Owl,Less than 5 hours,Very productive,Not stressed
+,,Early Bird,5-7 hours,Somewhat productive,Very stressed
+2025,Social Science,Night Owl,Less than 5 hours,Very productive,Very stressed
+2026,Interdivisional,Night Owl,Less than 5 hours,Very productive,Not stressed
+2028,Interdivisional,Night Owl,Less than 5 hours,Somewhat productive,Not stressed
+2025,Humanities,Early Bird,More than 7 hours,Not productive,Very stressed
+2027,Social Science,Night Owl,Less than 5 hours,Very productive,Not stressed
+2026,Natural Science,Early Bird,Less than 5 hours,Very productive,Not stressed
+2027,Humanities,Night Owl,More than 7 hours,Somewhat productive,Very stressed
+2028,"Natural Science, Interdivisional",Early Bird,Less than 5 hours,Very productive,Very stressed
+2026,Social Science,Early Bird,5-7 hours,Not productive,Very stressed
+2027,Social Science,Night Owl,Less than 5 hours,Very productive,Very stressed
+2025,Humanities,Early Bird,Less than 5 hours,Very productive,Not stressed
+2026,Interdivisional,Night Owl,More than 7 hours,Not productive,Very stressed
+2027,Social Science,Night Owl,Less than 5 hours,Very productive,Somewhat stressed
+2028,Social Science,Night Owl,More than 7 hours,Somewhat productive,Not stressed
+2027,Interdivisional,Early Bird,More than 7 hours,Somewhat productive,Very stressed
+2025,Natural Science,Night Owl,Less than 5 hours,Very productive,Very stressed
+2026,Humanities,Night Owl,5-7 hours,Somewhat productive,Somewhat stressed
+2026,Interdivisional,Early Bird,More than 7 hours,Very productive,Very stressed
+2026,Social Science,Night Owl,Less than 5 hours,Somewhat productive,Not stressed
+2028,"Humanities, Natural Science",Night Owl,More than 7 hours,Not productive,Somewhat stressed
+2028,"Humanities, Interdivisional",Night Owl,5-7 hours,Somewhat productive,Not stressed
+2025,Interdivisional,Night Owl,5-7 hours,Somewhat productive,Very stressed
+2026,Social Science,Early Bird,Less than 5 hours,Very productive,Not stressed
