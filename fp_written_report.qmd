@@ -18,6 +18,7 @@ csl: apa.csl
 library(tidyverse)
 library(janitor)
 library(readr)
+library(knitr)
 
 sleep_productivity_stress <- read_csv("sleep_productivity_stress.csv") |>
   clean_names() |>
@@ -37,26 +38,80 @@ sleep_stress <- sleep_productivity_stress |>
 
 ## Introduction
 
-Imagine waking up after few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, in a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health. 
+Imagine waking up after few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, in a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health.
 
 This project aims to investigate the relationship between sleep duration and 2 crucial aspects of any college student's life: their productivity and stress level. Our research question is **"Does the amount of sleep a college student gets influence their productivity and stress level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity and stress throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
 
-The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students from Smith College, UMASS Amherst, Amherst College, Brown University, MIT...(USA), National Economic University, Diplomatic Academy of Vietnam, Hanoi University of Science and Technology... (Vietnam). 
+The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students.
 
 ## Exploratory Data Analysis
+
+### Sample Questions
+
+1.  **Major Division** (Humanities, Social Science, Natural Science, Interdivisional)
+
+2.  **Class Year** (2025, 2026, 2027, 2028)
+
+3.  **Are you more of an early bird or a night owl?**
+
+a.  Early bird
+b.  Night owl
+
+
+4.  **How long do you sleep during weekdays, on average?**
+
+a.  Less than 5 hours
+b.  5-7 hours
+c.  More than 7 hours
+
+5.  **How productive are you during weekdays, on average?** *Rate your productivity on the following scales: 1 - not productive, 2-4 - somewhat productive, 5 - very productive*
+
+a.  Not productive
+b.  Somewhat productive
+c.  Very productive
+
+
+6.  **On average, how stressed do you feel during weekdays?** *Rate your stress on the following scales: 1 - not stressed, 2-4 - somewhat stressed, 5 - very stressed*
+
+a.  Not stressed
+b.  Somewhat stressed
+c.  Very stressed
+
+### About the Data
+
+#### Data Collection
+
+-   This data is collected through Google Form. We used convenience sampling with responses from our friends and their acquaintances from Smith College, UMASS Amherst, Amherst College, Brown University, MIT...(USA), National Economic University, Diplomatic Academy of Vietnam, Hanoi University of Science and Technology... (Vietnam). Since we did not request input regarding school name, we do not know the exact number of observations from each school.
+-   Other than directly sending to our friends at Smith, we posted it on Smith Confession to seek certain diversity and independence in Smithies observations. Evelyn also had her Vietnamese friends posted it on Meta posts and stories to seek responses from their network of Vietnamese college students; her other friends in other USA colleges also requested their acquaintances to fill out the survey, which helps widen the scope of the survey observation to students from other colleges.
+
+#### Dataset Introduction
+
+-   Number of observations: 90
+-   Number of variables: 6 in total, 3 in use
+    -   `weekday_sleep_average` (hours)
+    -   `weekday_productivity_level`
+    -   `weekday_stress_level`
+
+#### Data Wrangling
+
+-   Since we used multiple choice and check-boxes for most of our questions, we do not have to re-code the variables for consistency. Our questions regarding sleep duration, productivity, and stress level are also required, so we don't have any missing values in our data sets.
+-   However, since the variables are first named by the questions with space and capitalization, we have to clean the names and rename them to make sure they are concise and effective.
+-   We created 2 subsets of the data set - sleep and productivity level & sleep and stress level with 2 variables regarding sleep duration and productivity/stress level for each subset.
+
+#### Variable Distribution
+
+##### Weekday Sleep Duration
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 
-#| label: sleep
-#| fig-cap: "Weekday Sleep Duration"
-#| echo: false
+sleep_productivity_stress <- sleep_productivity_stress |>
+  mutate(weekday_sleep_average = fct_relevel(weekday_sleep_average, 
+            "Less than 5 hours", "5-7 hours", "More than 7 hours")) 
 
 sleep_productivity_stress |>
-  mutate(weekday_sleep_average = fct_relevel(weekday_sleep_average, 
-            "Less than 5 hours", "5-7 hours", "More than 7 hours")) |>
   ggplot(aes(x = weekday_sleep_average,
              fill = weekday_sleep_average)) +
   geom_bar() +
@@ -70,14 +125,14 @@ sleep_productivity_stress |>
   )
 ```
 
+From the bar plot, it is noticeable that nearly half of observations, 44 out of 90 observations, sleep for 5-7 hours on average during weekdays. About 26 observations sleep for more than 7 hours on average during weekdays, while only 20 observations sleep for less than 5 hours on average during weekdays.
+
+##### Weekday Productivity Level
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-
-#| label: productivity
-#| fig-cap: "Weekday Productivity Level"
-#| echo: false
 
 sleep_productivity_stress |>
   ggplot(aes(x = weekday_productivity_level,
@@ -96,14 +151,14 @@ sleep_productivity_stress |>
   )
 ```
 
+From the bar plot, it can be seen that the majority, 47 out of 90, of observed college students feel somewhat productive on average during weekday. Nearly $1/3$ of the observations feel very productive on average during weekday while only 15 out of 90 observations do not feel productive on average during weekday.
+
+##### Weekday Stress Level
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-
-#| label: stress
-#| fig-cap: "Weekday Stress Level"
-#| echo: false
 
 sleep_productivity_stress |>
   ggplot(aes(x = weekday_stress_level,
@@ -118,31 +173,29 @@ sleep_productivity_stress |>
     fill = "Weekday Stress Level"
   )
 ```
+
+As seen in the bar plot, nearly half, 39 out of 90, of observed college students feel somewhat stressed on average during weekday while only 16 observations do not feel stressed on average during weekday. However, 35 observations feel very stressed on average during weekday, demonstrating a very close gap with the number of somewhat stressed college students.
+
 ## Results
 
 ### Sleep Duration vs. Productivity Level
 
+**Table 1** and the corresponding **bar plot** shows the distribution of the observed values of productivity levels across different sleep duration.
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-
-#| label: sleep_productivity
-#| tbl-cap: "Sleep Duration vs. Productivity Level"
-#| echo: false
 
 sleep_productivity <- table(sleep_productivity)
-knitr::kable(sleep_productivity)
+kable(sleep_productivity,
+      caption = "Sleep Duration vs. Productivity Level Observed Values")
 ```
-
+ 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-
-#| label: sleep_productivity
-#| fig-cap: "Sleep Duration vs. Productivity Level"
-#| echo: false
 
 sleep_productivity_stress |>
   ggplot(aes(x = weekday_productivity_level,
@@ -163,27 +216,30 @@ sleep_productivity_stress |>
 
 #### Hypotheses
 
-- $H_0$: Sleep duration and productivity level are independent.
-- $H_A$: Sleep duration and productivity level are related.
+-   $H_0$: Sleep duration and productivity level are independent.
+-   $H_A$: Sleep duration and productivity level are related.
 
 #### Conditions
 
-1. **Independence**
+1.  **Independence**
 
-2. **Large Sample**
+The use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits.
+Thus, Independence condition for Chi-Square Test not met.
+
+2.  **Large Sample**
+
+There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$, including $e_{2,1}$ and $e_{3,1}$ as shown in **Table 2**.
+Thus, Large Sample condition for Chi-Square Test not met.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 
-#| label: sleep_productivity
-#| tbl-cap: "Sleep Duration vs. Productivity Level Expected Counts"
-#| echo: false
-
 chi_square_test <- chisq.test(sleep_productivity)
 expected_counts <- chi_square_test$expected
-knitr::kable(round(expected_counts, 2))
+kable(round(expected_counts, 2),
+      caption = "Sleep Duration vs. Productivity Level Expected Counts")
 ```
 
 #### Chi-Square Testing
@@ -195,20 +251,24 @@ knitr::kable(round(expected_counts, 2))
 
 print(chi_square_test)
 ```
+Assuming that our conditions for Chi-square test are met and $H_0$ is true, we have $\chi^2 = 14.223$ ~ $df = (R-1)(C-1) = (3-1)(3-1) = 4$ as our test statistics and degrees of freedom for our Chi-square Distribution.
+
+**Conclusion**: Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that sleep duration and productivity level are significantly related.
+
+**Interpretation**: The data provides sufficient evidence to support the claim that sleep duration significantly influences productivity level at $\alpha = .01$ significance level.
 
 ### Sleep Duration vs. Stress Level
+
+**Table 3** and the corresponding **bar plot** shows the distribution of the observed values of productivity levels across different sleep duration.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 
-#| label: sleep_stress
-#| tbl-cap: "Sleep Duration vs. Stress Level"
-#| echo: false
-
 sleep_stress <- table(sleep_stress)
-knitr::kable(sleep_stress)
+kable(sleep_stress,
+      caption = "Sleep Duration vs. Stress Level Observed Values")
 ```
 
 ```{r}
@@ -216,7 +276,7 @@ knitr::kable(sleep_stress)
 #| message: false
 #| warning: false
 
-#| label: sleep_stress
+#| label: tbl-sleep_stress
 #| fig-cap: "Sleep Duration vs. Stress Level"
 #| echo: false
 
@@ -236,27 +296,30 @@ sleep_productivity_stress |>
 
 #### Hypotheses
 
-- $H_0$: Sleep duration and stress level are independent.
-- $H_A$: Sleep duration and stress level are related.
+-   $H_0$: Sleep duration and stress level are independent.
+-   $H_A$: Sleep duration and stress level are related.
 
 #### Conditions
 
-1. **Independence**
+1.  **Independence**
 
-2. **Large Sample**
+The use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits.
+Thus, Independence condition for Chi-Square Test not met.
+
+2.  **Large Sample**
+
+There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$, including $e_{2,1}$ and $e_{3,1}$ as shown in **Table 4**.
+Thus, Large Sample condition for Chi-Square Test not met.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 
-#| label: sleep_productivity
-#| tbl-cap: "Sleep Duration vs. Stress Level Expected Counts"
-#| echo: false
-
 chi_square_test_2 <- chisq.test(sleep_stress)
 expected_counts_2 <- chi_square_test_2$expected
-knitr::kable(round(expected_counts_2, 2))
+kable(round(expected_counts_2, 2),
+      caption = "Sleep Duration vs. Stress Level Expected Counts")
 ```
 
 #### Chi-Square Testing
@@ -268,6 +331,11 @@ knitr::kable(round(expected_counts_2, 2))
 
 print(chi_square_test_2)
 ```
+Assuming that our conditions for Chi-square test are met and $H_0$ is true, we have $\chi^2 = 20.293$ ~ $df = (R-1)(C-1) = (3-1)(3-1) = 4$ as our test statistics and degrees of freedom for our Chi-square Distribution.
+
+**Conclusion**: Our $p-value = .000437$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that sleep duration and stress level are significantly related.
+
+**Interpretation**: The data provides sufficient evidence to support the claim that sleep duration significantly influences stress level at $\alpha = .01$ significance level.
 
 ## Discussion
 
