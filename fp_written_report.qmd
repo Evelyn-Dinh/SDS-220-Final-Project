@@ -7,7 +7,7 @@ bibliography: citation.bib
 csl: apa.csl
 ---
 
-# Does Sleep Duration Influences Productivity and Stress Level of College Students?
+# Does Sleep Duration Influences Productivity Level of College Students?
 
 ```{r}
 #| include: false
