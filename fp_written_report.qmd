@@ -44,36 +44,19 @@ The data for this study was collected through a survey on Google Form. Our targe
 
 ## Exploratory Data Analysis
 
-### Sample Questions
+### Main Sample Questions
 
-1.  **Major Division** (Humanities, Social Science, Natural Science, Interdivisional)
-
-2.  **Class Year** (2025, 2026, 2027, 2028)
-
-3.  **Are you more of an early bird or a night owl?**
-
-a.  Early bird
-b.  Night owl
-
-
-4.  **How long do you sleep during weekdays, on average?**
+1.  **How long do you sleep during weekdays, on average?**
 
 a.  Less than 5 hours
 b.  5-7 hours
 c.  More than 7 hours
 
-5.  **How productive are you during weekdays, on average?** *Rate your productivity on the following scales: 1 - not productive, 2-4 - somewhat productive, 5 - very productive*
+2.  **How productive are you during weekdays, on average?** *Rate your productivity on the following scales: 1 - not productive, 2-4 - somewhat productive, 5 - very productive*
 
 a.  Not productive
 b.  Somewhat productive
 c.  Very productive
-
-
-6.  **On average, how stressed do you feel during weekdays?** *Rate your stress on the following scales: 1 - not stressed, 2-4 - somewhat stressed, 5 - very stressed*
-
-a.  Not stressed
-b.  Somewhat stressed
-c.  Very stressed
 
 ### About the Data
 
@@ -192,7 +175,7 @@ sleep_productivity_stress |>
 
 #### Type of Test
 
-This is a inference of two-way tables, therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
+Since `weekday_sleep_average` and `weekday_productivity_level` are both **categorical variables** with each of them have 3 categories, we use inference of two-way tables. Therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
 
 #### Hypotheses
 
@@ -210,8 +193,7 @@ Thus, Independence condition for Chi-Square Test not met.
 
 2.  **Large Sample**: $e_{i,j} \geq 5$ for each cell.
 
-There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$, including $e_{2,1}$ and $e_{3,1}$ as shown in **Table 2**.
-Thus, Large Sample condition for Chi-Square Test not met.
+If `weekday_sleep_average` and `weekday_productivity_level` are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be 
 
 ```{r}
 #| echo: false
@@ -223,6 +205,9 @@ expected_counts <- chi_square_test$expected
 kable(round(expected_counts, 2),
       caption = "Sleep Duration vs. Productivity Level Expected Counts")
 ```
+
+There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in **Table 2**.
+Thus, Large Sample condition for Chi-Square Test not met.
 
 #### Chi-Square Testing
 
@@ -261,13 +246,13 @@ polygon(c(xvec, rev(xvec)), c(pvec, rep(0, length(pvec))),
 abline(v = test_stat, col = "red", lwd = 2)
 ```
 
-Our null distribution (as shown above) is a **Chi-square Distribution** which is always right-skewed, only takes positive values, and has a parameter of 
+Our null distribution (as shown above) is a **Chi-square Distribution** which is always right-skewed, only haves positive values, and has a parameter of 
 
 $df = 4$, 
 
 called **degrees of freedom**, which changes the shape of the Chi-squared distribution - the higher the degrees of freedom, the less skewed, more symmetric, more spread the distribution will be, and the further will the peak shift rightward. 
 
-Given that we only take the right tail to calculate p-value, our $p-value = .006615$.
+Given that we only take the right tail area to calculate p-value, our $p-value = .006615$.
 
 We choose our significance level $\alpha = .01$ to control the Type 1 error rate.
 
