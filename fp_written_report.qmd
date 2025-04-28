@@ -251,7 +251,7 @@ abline(v = test_stat, col = "red", lwd = 2)
 
 Our null distribution (as shown above) is a **Chi-square Distribution** which is always right-skewed, only haves positive values, and has a parameter of $df = 4$.
 
-Given that we only take the right tail area to calculate p-value, our $p-value = .006615$.
+Given that we only take the shaded right tail area to calculate p-value, our $p-value = .006615$.
 
 We choose our significance level $\alpha = .01$ to control the Type 1 error rate.
 
