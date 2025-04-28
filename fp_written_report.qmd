@@ -19,6 +19,8 @@ library(tidyverse)
 library(janitor)
 library(readr)
 library(knitr)
+library(openintro)
+library(infer)
 
 sleep_productivity_stress <- read_csv("sleep_productivity_stress.csv") |>
   clean_names() |>
@@ -30,17 +32,13 @@ sleep_productivity_stress <- read_csv("sleep_productivity_stress.csv") |>
 sleep_productivity <- sleep_productivity_stress |>  
   select(weekday_sleep_average,
          weekday_productivity_level)
-
-sleep_stress <- sleep_productivity_stress |>
-  select(weekday_sleep_average,
-         weekday_stress_level)
 ```
 
 ## Introduction
 
 Imagine waking up after few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, in a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health.
 
-This project aims to investigate the relationship between sleep duration and 2 crucial aspects of any college student's life: their productivity and stress level. Our research question is **"Does the amount of sleep a college student gets influence their productivity and stress level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity and stress throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
+This project aims to investigate the relationship between sleep duration and 2 crucial aspects of any college student's life: their productivity and stress level. Our research question is **"Does the amount of sleep a college student gets influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
 
 The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students.
 
@@ -87,16 +85,15 @@ c.  Very stressed
 #### Dataset Introduction
 
 -   Number of observations: 90
--   Number of variables: 6 in total, 3 in use
+-   Number of variables: 6 in total, 2 in use
     -   `weekday_sleep_average` (hours)
     -   `weekday_productivity_level`
-    -   `weekday_stress_level`
 
 #### Data Wrangling
 
 -   Since we used multiple choice and check-boxes for most of our questions, we do not have to re-code the variables for consistency. Our questions regarding sleep duration, productivity, and stress level are also required, so we don't have any missing values in our data sets.
 -   However, since the variables are first named by the questions with space and capitalization, we have to clean the names and rename them to make sure they are concise and effective.
--   We created 2 subsets of the data set - sleep and productivity level & sleep and stress level with 2 variables regarding sleep duration and productivity/stress level for each subset.
+-   We created 1 subset of the data set - sleep and productivity level with 2 variables regarding sleep duration and productivity level.
 
 #### Variable Distribution
 
@@ -153,32 +150,9 @@ sleep_productivity_stress |>
 
 From the bar plot, it can be seen that the majority, 47 out of 90, of observed college students feel somewhat productive on average during weekday. Nearly $1/3$ of the observations feel very productive on average during weekday while only 15 out of 90 observations do not feel productive on average during weekday.
 
-##### Weekday Stress Level
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-sleep_productivity_stress |>
-  ggplot(aes(x = weekday_stress_level,
-             fill = weekday_stress_level)) +
-  geom_bar() +
-  labs(
-    title = "Weekday Stress Level of College Students",
-    subtitle = "A Survey of Stress of College Students",
-    caption = "Source: Self-Collected Survey",
-    x = "Weekday Stress Level",
-    y = "Count",
-    fill = "Weekday Stress Level"
-  )
-```
-
-As seen in the bar plot, nearly half, 39 out of 90, of observed college students feel somewhat stressed on average during weekday while only 16 observations do not feel stressed on average during weekday. However, 35 observations feel very stressed on average during weekday, demonstrating a very close gap with the number of somewhat stressed college students.
-
-## Results
-
 ### Sleep Duration vs. Productivity Level
+
+Since `weekday_sleep_average` and `weekday_productivity_level` are both **categorical variables**, we are using a **contingency table** as well as **stacked bar plot** to visualize their distribution and potential association.
 
 **Table 1** and the corresponding **bar plot** shows the distribution of the observed values of productivity levels across different sleep duration.
 
@@ -214,6 +188,12 @@ sleep_productivity_stress |>
   )
 ```
 
+## Results
+
+#### Type of Test
+
+This is a inference of two-way tables, therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
+
 #### Hypotheses
 
 -   $H_0$: Sleep duration and productivity level are independent.
@@ -221,12 +201,14 @@ sleep_productivity_stress |>
 
 #### Conditions
 
-1.  **Independence**
+The Conditions for Two-Way Table Test of Independence include **Independence** and **Large Sample**.
+
+1.  **Independence**: The data values were collected were from a random sample.
 
 The use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits.
 Thus, Independence condition for Chi-Square Test not met.
 
-2.  **Large Sample**
+2.  **Large Sample**: $e_{i,j} \geq 5$ for each cell.
 
 There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$, including $e_{2,1}$ and $e_{3,1}$ as shown in **Table 2**.
 Thus, Large Sample condition for Chi-Square Test not met.
@@ -244,6 +226,8 @@ kable(round(expected_counts, 2),
 
 #### Chi-Square Testing
 
+##### Test Statistics
+
 ```{r}
 #| echo: false
 #| message: false
@@ -251,95 +235,49 @@ kable(round(expected_counts, 2),
 
 print(chi_square_test)
 ```
-Assuming that our conditions for Chi-square test are met and $H_0$ is true, we have $\chi^2 = 14.223$ ~ $df = (R-1)(C-1) = (3-1)(3-1) = 4$ as our test statistics and degrees of freedom for our Chi-square Distribution. We have our $p-value = .006615$.
+
+Assuming that conditions for the Mathematical Model of the Two-Way Table Test of Independence are met and $H_0$ is true, our test statistic 
+
+$\chi^2 = 14.223$, 
+
+which is a ratio of how the observed counts vary from the expected counts as compared to the expected counts, has a **Chi-squared Distribution** with the parameter
+
+$df = (R-1)(C-1) = (3-1)(3-1) = 4$
+
+##### p-value Mathematical Model Plot
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+test_stat <- 14.223
+curve(dchisq(x, df = 4), col = 'black',  from = 0,to = 25, 
+      xlab = "", ylab = "", xaxt = "n",  yaxt = "n")
+xvec <- seq(test_stat, 25, length = 101)
+pvec <- dchisq(xvec, df = 4)
+polygon(c(xvec, rev(xvec)), c(pvec, rep(0, length(pvec))),
+        col = adjustcolor("red", alpha = 0.3))
+abline(v = test_stat, col = "red", lwd = 2)
+```
+
+Our null distribution (as shown above) is a **Chi-square Distribution** which is always right-skewed, only takes positive values, and has a parameter of 
+
+$df = 4$, 
+
+called **degrees of freedom**, which changes the shape of the Chi-squared distribution - the higher the degrees of freedom, the less skewed, more symmetric, more spread the distribution will be, and the further will the peak shift rightward. 
+
+Given that we only take the right tail to calculate p-value, our $p-value = .006615$.
 
 We choose our significance level $\alpha = .01$ to control the Type 1 error rate.
 
-**Conclusion**: Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that sleep duration and productivity level are significantly related.
+##### Conclusion
 
-**Interpretation**: The data provides sufficient evidence to support the claim that sleep duration significantly influences productivity level at $\alpha = .01$ significance level.
+Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that sleep duration and productivity level are significantly related.
 
-### Sleep Duration vs. Stress Level
+##### Interpretation
 
-**Table 3** and the corresponding **bar plot** shows the distribution of the observed values of productivity levels across different sleep duration.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-sleep_stress <- table(sleep_stress)
-kable(sleep_stress,
-      caption = "Sleep Duration vs. Stress Level Observed Values")
-```
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-#| label: tbl-sleep_stress
-#| fig-cap: "Sleep Duration vs. Stress Level"
-#| echo: false
-
-sleep_productivity_stress |>
-  ggplot(aes(x = weekday_stress_level,
-             fill = weekday_sleep_average)) +
-  geom_bar() +
-  labs(
-    title = "Sleep Duration vs. Stress Level",
-    subtitle = "A Survey of Sleep Duration vs. Stress Level of College Students",
-    caption = "Source: Self-Collected Survey",
-    x = "Weekday Stress Level",
-    y = "Count",
-    fill = "Weekday Sleep Duration"
-  )
-```
-
-#### Hypotheses
-
--   $H_0$: Sleep duration and stress level are independent.
--   $H_A$: Sleep duration and stress level are related.
-
-#### Conditions
-
-1.  **Independence**
-
-The use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits.
-Thus, Independence condition for Chi-Square Test not met.
-
-2.  **Large Sample**
-
-There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$, including $e_{2,1}$ and $e_{3,1}$ as shown in **Table 4**.
-Thus, Large Sample condition for Chi-Square Test not met.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-chi_square_test_2 <- chisq.test(sleep_stress)
-expected_counts_2 <- chi_square_test_2$expected
-kable(round(expected_counts_2, 2),
-      caption = "Sleep Duration vs. Stress Level Expected Counts")
-```
-
-#### Chi-Square Testing
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-print(chi_square_test_2)
-```
-Assuming that our conditions for Chi-square test are met and $H_0$ is true, we have $\chi^2 = 20.293$ ~ $df = (R-1)(C-1) = (3-1)(3-1) = 4$ as our test statistics and degrees of freedom for our Chi-square Distribution. We have our $p-value = .000437$.
-
-We choose our significance level $\alpha = .01$ to control the Type 1 error rate.
-
-**Conclusion**: Our $p-value = .000437$ is smaller than $\alpha = .05$, therefore we reject the null hypothesis. We conclude that sleep duration and stress level are significantly related.
-
-**Interpretation**: The data provides sufficient evidence to support the claim that sleep duration significantly influences stress level at $\alpha = .01$ significance level.
+The data provides sufficient evidence to support the claim that sleep duration is significantly related to productivity level at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student gets influence their productivity level.
 
 ## Discussion
 
