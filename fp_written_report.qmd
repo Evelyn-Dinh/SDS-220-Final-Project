@@ -84,6 +84,8 @@ c.  Very productive
 ##### Weekday Sleep Duration
 
 ```{r}
+#| label: fig-sleep
+#| fig-cap: "Weekday Sleep Duration of College Students"
 #| echo: false
 #| message: false
 #| warning: false
@@ -106,11 +108,13 @@ sleep_productivity_stress |>
   )
 ```
 
-From the bar plot, it is noticeable that nearly half of observations, 44 out of 90 observations, sleep for 5-7 hours on average during weekdays. About 26 observations sleep for more than 7 hours on average during weekdays, while only 20 observations sleep for less than 5 hours on average during weekdays.
+From @fig-sleep, it is noticeable that nearly half of observations, 44 out of 90 observations, sleep for 5-7 hours on average during weekdays. About 26 observations sleep for more than 7 hours on average during weekdays, while only 20 observations sleep for less than 5 hours on average during weekdays.
 
 ##### Weekday Productivity Level
 
 ```{r}
+#| label: fig-productivity
+#| fig-cap: "Weekday Productivity Level of College Students"
 #| echo: false
 #| message: false
 #| warning: false
@@ -132,25 +136,26 @@ sleep_productivity_stress |>
   )
 ```
 
-From the bar plot, it can be seen that the majority, 47 out of 90, of observed college students feel somewhat productive on average during weekday. Nearly $1/3$ of the observations feel very productive on average during weekday while only 15 out of 90 observations do not feel productive on average during weekday.
+From @fig-productivity, it can be seen that the majority, 47 out of 90, of observed college students feel somewhat productive on average during weekday. Nearly $1/3$ of the observations feel very productive on average during weekday while only 15 out of 90 observations do not feel productive on average during weekday.
 
 ### Sleep Duration vs. Productivity Level
 
 Since `weekday_sleep_average` and `weekday_productivity_level` are both **categorical variables**, we are using a **contingency table** as well as **stacked bar plot** to visualize their distribution and potential association.
 
-**Table 1** and the corresponding **bar plot** shows the distribution of the observed values of productivity levels across different sleep duration.
-
 ```{r}
+#| label: tbl-sleep-productivity
+#| tbl-cap: "Sleep Duration vs. Productivity Level Observed Values"
 #| echo: false
 #| message: false
 #| warning: false
 
 sleep_productivity <- table(sleep_productivity)
-kable(sleep_productivity,
-      caption = "Sleep Duration vs. Productivity Level Observed Values")
+kable(sleep_productivity)
 ```
  
 ```{r}
+#| label: fig-sleep-productivity
+#| fig-cap: "Sleep Duration vs. Productivity Level of College Students"
 #| echo: false
 #| message: false
 #| warning: false
@@ -171,6 +176,8 @@ sleep_productivity_stress |>
     fill = "Weekday Sleep Duration"
   )
 ```
+
+@tbl-sleep-productivity and the corresponding @fig-sleep-productivity shows the distribution of the observed values of productivity levels across different sleep duration.
 
 ## Results
 
@@ -197,17 +204,18 @@ Thus, Independence condition for Chi-Square Test not met.
 If `weekday_sleep_average` and `weekday_productivity_level` are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be 
 
 ```{r}
+#| label: tbl-sleep-productivity-expected
+#| tbl-cap: "Sleep Duration vs. Productivity Level Expected Counts"
 #| echo: false
 #| message: false
 #| warning: false
 
 chi_square_test <- chisq.test(sleep_productivity)
 expected_counts <- chi_square_test$expected
-kable(round(expected_counts, 2),
-      caption = "Sleep Duration vs. Productivity Level Expected Counts")
+kable(round(expected_counts, 2))
 ```
 
-There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in **Table 2**.
+There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected.
 Thus, Large Sample condition for Chi-Square Test not met.
 
 #### Chi-Square Testing
