@@ -63,7 +63,9 @@ c.  Very productive
 #### Data Collection
 
 Our target population is college students. 
+
 This data is collected through Google Form. We used convenience sampling with responses from our friends and their acquaintances from Smith College, UMASS Amherst, Amherst College, Brown University, MIT...(USA), National Economic University, Diplomatic Academy of Vietnam, Hanoi University of Science and Technology... (Vietnam). Since we did not request input regarding school name, we do not know the exact number of observations from each school.
+
 Other than directly sending to our friends at Smith, we posted it on Smith Confession to seek certain diversity and independence in Smithies observations. Evelyn also had her Vietnamese friends posted it on Meta posts and stories to seek responses from their network of Vietnamese college students; her other friends in other USA colleges also requested their acquaintances to fill out the survey, which helps widen the scope of the survey observation to students from other colleges.
 
 #### Dataset Introduction
