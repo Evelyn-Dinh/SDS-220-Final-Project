@@ -38,7 +38,7 @@ sleep_productivity <- sleep_productivity_stress |>
 
 Imagine waking up after few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, in a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health.
 
-This project aims to investigate the relationship between sleep duration and one of the most crucial aspects of any college student's life: their productivity. Our research question is **"Does the amount of sleep a college student gets influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
+This project aims to investigate the relationship between sleep duration and one of the most crucial aspects of any college student's life: their productivity. Our research question is **"Does the amount of sleep college students get influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
 
 The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students. We are investigating whether the amount of sleep a college student gets influence their productivity using Two-Way Table Test of Independence with Chi-square Distribution.
 
@@ -278,7 +278,7 @@ Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the 
 
 ##### Interpretation
 
-The data provides sufficient evidence to support the claim that sleep duration is significantly related to productivity level at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student gets influence their productivity level.
+The data provides sufficient evidence to support the claim that sleep duration is significantly related to productivity level at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep college students get influences their productivity level.
 
 ## Discussion
 
