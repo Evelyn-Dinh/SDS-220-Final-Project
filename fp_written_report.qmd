@@ -40,7 +40,7 @@ Imagine waking up after few hours of sleep, then dragging your tired body throug
 
 This project aims to investigate the relationship between sleep duration and 2 crucial aspects of any college student's life: their productivity and stress level. Our research question is **"Does the amount of sleep a college student gets influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
 
-The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students.
+The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students. We are investigating whether the amount of sleep a college student gets influence their productivity using Two-Way Table Test of Independence with Chi-square Distribution.
 
 ## Exploratory Data Analysis
 
@@ -197,7 +197,7 @@ The Conditions for Two-Way Table Test of Independence include **Independence** a
 1.  **Independence**: The data values were collected were from a random sample.
 
 The use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits.
-Thus, Independence condition for Chi-Square Test not met.
+Thus, Independence condition for Two-Way Table Test of Independence not met.
 
 2.  **Large Sample**: $e_{i,j} \geq 5$ for each cell.
 
@@ -216,7 +216,9 @@ kable(round(expected_counts, 2))
 ```
 
 There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected.
-Thus, Large Sample condition for Chi-Square Test not met.
+Thus, Large Sample condition for Two-Way Table Test of Independence not met.
+
+**Note**: Because of both conditions not met, the test statistics $\chi^2$ may not have a Chi-squared Distribution.
 
 #### Chi-Square Testing
 
