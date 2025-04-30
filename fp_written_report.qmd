@@ -70,7 +70,7 @@ c.  Very productive
 -   Number of observations: 90
 -   Number of variables: 6 in total, 2 in use
     -   `weekday_sleep_average` (hours)
-    -   `weekday_productivity_level` (score)
+    -   `weekday_productivity_level`
 -   Type of Variables: Categorical and Ordinal
 
 #### Data Wrangling
