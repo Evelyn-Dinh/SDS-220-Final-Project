@@ -150,6 +150,10 @@ Since `weekday_sleep_average` and `weekday_productivity_level` are both **catego
 #| message: false
 #| warning: false
 
+sleep_productivity <- sleep_productivity |>
+  mutate(weekday_sleep_average = fct_relevel(weekday_sleep_average, 
+            "Less than 5 hours", "5-7 hours", "More than 7 hours"))
+
 sleep_productivity <- table(sleep_productivity)
 kable(sleep_productivity)
 ```
@@ -178,7 +182,9 @@ sleep_productivity_stress |>
   )
 ```
 
-@tbl-sleep-productivity and the corresponding @fig-sleep-productivity shows the distribution of the observed values of productivity levels across different sleep duration.
+@tbl-sleep-productivity and the corresponding @fig-sleep-productivity shows the distribution of the observed values of productivity levels across different sleep duration. 
+
+It is noticeable that individuals who sleep 5-7 hours make up the majority of "somewhat productive" group while those who sleep less than 5 hours have the highest number of individuals in the "very productive" group. For both the "not productive" and "very productive" group, the number of individuals sleeping 5-7 hours and more than 7 hours is the same. Surprisingly, in the "not productive" category, 7 individuals each reported sleeping 5-7 hours and more than 7 hours, both are significantly higher than the number of individuals sleeping less than 5 hours, which was only 1.
 
 ## Results
 
