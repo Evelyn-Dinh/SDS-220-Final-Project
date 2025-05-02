@@ -106,7 +106,7 @@ sleep_productivity_stress |>
   )
 ```
 
-From @fig-sleep, it is noticeable that nearly half of observations, 44 out of 90 observations, sleep for 5-7 hours on average during weekdays. About 26 observations sleep for more than 7 hours on average during weekdays, while only 20 observations sleep for less than 5 hours on average during weekdays.
+From @fig-sleep, it is noticeable that nearly half of the observed college students, 44 out of 90 observations, sleep for 5-7 hours on average during weekdays. About 26 observations sleep for more than 7 hours on average during weekdays, while only 20 observations sleep for less than 5 hours on average during weekdays.
 
 ##### Weekday Productivity Level
 
@@ -179,7 +179,7 @@ sleep_productivity_stress |>
 
 @tbl-sleep-productivity and the corresponding @fig-sleep-productivity shows the distribution of the observed values of productivity levels across different sleep duration. 
 
-It is noticeable that individuals who sleep 5-7 hours make up the majority of "somewhat productive" group with 29 individuals while those who sleep less than 5 hours have the highest number of individuals in the "very productive" group with 12 individuals. For both the "not productive" and "very productive" group, the number of individuals sleeping 5-7 hours and more than 7 hours is the same. Surprisingly, in the "not productive" category, 7 individuals each reported sleeping 5-7 hours and more than 7 hours, both are significantly higher than the number of individuals sleeping less than 5 hours, which was only 1.
+It is noticeable that college students who sleep 5-7 hours make up the majority of "somewhat productive" group with 29 students while those who sleep less than 5 hours have the highest number of individuals in the "very productive" group with 12 students For both the "not productive" and "very productive" group, the number of college students sleeping 5-7 hours and more than 7 hours is the same. Surprisingly, in the "not productive" category, 7 students each reported sleeping 5-7 hours and more than 7 hours, both are significantly higher than the number of students sleeping less than 5 hours, which was only 1.
 
 ## Results
 
