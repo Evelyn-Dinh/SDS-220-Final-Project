@@ -7,7 +7,7 @@ bibliography: citation.bib
 csl: apa.csl
 ---
 
-# Does Sleep Duration Influences Productivity Level of College Students?
+# Does Sleep Duration Influence Productivity Level of College Students?
 
 ```{r}
 #| include: false
@@ -36,11 +36,11 @@ sleep_productivity <- sleep_productivity_stress |>
 
 ## Introduction
 
-Imagine waking up after few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, in a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health.
+Imagine waking up after only a few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, for a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health.
 
-This project aims to investigate the relationship between sleep duration and one of the most crucial aspects of any college student's life: their productivity. Our research question is **"Does the amount of sleep a college student gets influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
+This project aims to investigate the relationship between sleep duration and one of the most crucial aspects of any college student's life: their productivity. Our research question is **"Does the amount of sleep a college student gets influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Through understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
 
-The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students. We are investigating whether the amount of sleep a college student gets influence their productivity using Two-Way Table Test of Independence with Chi-square Distribution.
+The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges such as Smith College, Amherst College, UMASS Amherst, etc. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students. We are investigating whether the amount of sleep a college student gets influence their productivity using **Two-Way Table Test of Independence** with **Chi-square Distribution**.
 
 ## Exploratory Data Analysis
 
@@ -70,11 +70,9 @@ Other than directly sending to our friends at Smith, we posted it on Smith Confe
 
 #### Dataset Introduction
 
--   Number of observations: 90
--   Number of variables: 6 in total, 2 in use
-    -   `weekday_sleep_average` (hours)
-    -   `weekday_productivity_level`
--   Type of Variables: Ordinal Catgeorical
+We collected **90 responses** i.e. observations through our survey for **6 variables** in total, including major division, class year, whether the respondent is an early bird or a night owl, their average amount of sleep during weekday in hours, their average productivity level during weekday.
+
+We use **2 variables** - their average amount of sleep during weekday in hours and their average productivity level during weekday. Specifically, we consider the weekday average amount of sleep to be our **explanatory variable** and the weekday average productivity level to be our **response variable**. Both variables are **ordinal** and **categorical**. 
 
 #### Data Wrangling
 
@@ -100,8 +98,7 @@ sleep_productivity_stress |>
              fill = weekday_sleep_average)) +
   geom_bar() +
   labs(
-    title = "Weekday Sleep Duration of College Students",
-    subtitle = "A Survey of Sleep Duration of College Students",
+    title = "Weekday Sleep Duration",
     caption = "Source: Self-Collected Survey",
     x = "Weekday Sleep Duration",
     y = "Count",
@@ -128,8 +125,7 @@ sleep_productivity_stress |>
     axis.text = element_text(size = 7.5)
   ) +
   labs(
-    title = "Weekday Productivity Level of College Students",
-    subtitle = "A Survey of Productivity of College Students",
+    title = "Weekday Productivity Level",
     caption = "Source: Self-Collected Survey",
     x = "Weekday Productivity Level",
     y = "Count",
@@ -141,7 +137,7 @@ From @fig-productivity, it can be seen that the majority, 47 out of 90, of obser
 
 ### Sleep Duration vs. Productivity Level
 
-Since `weekday_sleep_average` and `weekday_productivity_level` are both **categorical variables**, we are using a **contingency table** as well as **stacked bar plot** to visualize their distribution and potential association.
+Since college students' weekday average sleep duration and their weekday average productivity level are both **categorical variables**, we are using a **contingency table** as well as **stacked bar plot** to visualize their distribution and potential association.
 
 ```{r}
 #| label: tbl-sleep-productivity
@@ -174,7 +170,6 @@ sleep_productivity_stress |>
   ) +
   labs(
     title = "Sleep Duration vs. Productivity Level",
-    subtitle = "A Survey of Sleep Duration vs. Productivity Level of College Students",
     caption = "Source: Self-Collected Survey",
     x = "Weekday Productivity Level",
     y = "Count",
@@ -190,25 +185,19 @@ It is noticeable that individuals who sleep 5-7 hours make up the majority of "s
 
 #### Type of Test
 
-Since `weekday_sleep_average` and `weekday_productivity_level` are both **categorical variables** with each of them have 3 categories, we use inference of two-way tables. Therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
+Since college students' weekday average sleep duration and their weekday average productivity level are both **categorical variables** with each of them have 3 categories, we use inference of two-way tables. Therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
 
 #### Hypotheses
 
--   $H_0$: Sleep duration and productivity level are independent.
--   $H_A$: Sleep duration and productivity level are related.
+Our null hypothesis $H_0$ is that college students' sleep duration and productivity level are independent. Our alternative hypothesis is that college students' sleep duration and productivity level are dependent.
 
 #### Conditions
 
-The Conditions for Two-Way Table Test of Independence include **Independence** and **Large Sample**.
+The Conditions for Two-Way Table Test of Independence include **Independence**, in which the data values were collected were from a random sample, and **Large Sample**, in which $e_{i,j} \geq 5$ for each cell.
 
-1.  **Independence**: The data values were collected were from a random sample.
+For the **Independence** condition, the use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits. Thus, Independence condition for Two-Way Table Test of Independence is not met.
 
-The use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits.
-Thus, Independence condition for Two-Way Table Test of Independence not met.
-
-2.  **Large Sample**: $e_{i,j} \geq 5$ for each cell.
-
-If `weekday_sleep_average` and `weekday_productivity_level` are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be 
+If college students' weekday average sleep duration and their weekday average productivity level are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be 
 
 ```{r}
 #| label: tbl-sleep-productivity-expected
@@ -222,10 +211,9 @@ expected_counts <- chi_square_test$expected
 kable(round(expected_counts, 2))
 ```
 
-There are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected.
-Thus, Large Sample condition for Two-Way Table Test of Independence not met.
+For the **Large Sample** condition, there are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected. Thus, Large Sample condition for Two-Way Table Test of Independence not met.
 
-**Note**: Because of both conditions not met, the test statistics $\chi^2$ may not have a Chi-squared Distribution.
+**Note**: Because of both conditions not met, the test statistics $\chi^2$ may not have a Chi-squared Distribution. However, we will still run the Two-Way Table Inference of Independence.
 
 #### Chi-Square Testing
 
@@ -235,23 +223,18 @@ Thus, Large Sample condition for Two-Way Table Test of Independence not met.
 #| echo: false
 #| message: false
 #| warning: false
+#| include: false
 
 print(chi_square_test)
 ```
 
-Assuming that conditions for the Mathematical Model of the Two-Way Table Test of Independence are met and $H_0$ is true, our test statistic 
-
-$\chi^2 = 14.223$, 
-
-which is a ratio of how the observed counts vary from the expected counts as compared to the expected counts, has a **Chi-squared Distribution** with the parameter
-
-$df = (R-1)(C-1) = (3-1)(3-1) = 4$,
-
-called **degrees of freedom**, which changes the shape of the Chi-squared distribution - the higher the degrees of freedom, the less skewed, more symmetric, more spread the distribution will be, and the further will the peak shift rightward. 
+Assuming that conditions for the Mathematical Model of the Two-Way Table Test of Independence are met and $H_0$ is true, our test statistic $\chi^2 = 14.223$, which is a ratio of how the observed counts vary from the expected counts as compared to the expected counts, has a **Chi-squared Distribution** with the parameter **degrees of freedom** having the value of $df = (R-1)(C-1) = (3-1)(3-1) = 4$ in which R represents the number of rows and C represents the number of columns. 
 
 ##### p-value Mathematical Model Plot
 
 ```{r}
+#| label: fig-chi-square
+#| fig-cap: "Chi-square Distribution of df = 4 and p-value (shaded right-tail area)"
 #| echo: false
 #| message: false
 #| warning: false
@@ -266,19 +249,15 @@ polygon(c(xvec, rev(xvec)), c(pvec, rep(0, length(pvec))),
 abline(v = test_stat, col = "red", lwd = 2)
 ```
 
-Our null distribution (as shown above) is a **Chi-square Distribution** which is always right-skewed, only haves positive values, and has a parameter of $df = 4$.
+Our null distribution, as shown in @fig-chi-square, is a **Chi-square Distribution** which is always right-skewed, only has positive values, and has a parameter of $df = 4$. The degree of freedom changes the shape of the Chi-squared distribution in which the higher the degrees of freedom, the less skewed, more symmetric, more spread the distribution will be, and the further will the peak shift rightward.
 
-Given that we only take the shaded right tail area to calculate p-value, our $p-value = .006615$.
+Given that we only take the shaded right tail area to calculate our p-value, our $p-value = .006615$. This means that the probability that we observe our $\chi^2$ as large as $14.223$ or larger is $.006615$.
 
-We choose our significance level $\alpha = .01$ to control the Type 1 error rate.
+We choose our significance level $\alpha = .01$ to control the Type 1 error rate in which we concluded that college students' sleep duration and productivity level are dependent when they are in fact independent.
 
-##### Conclusion
+##### Conclusion & Interpretation
 
-Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that college students' sleep duration and productivity level are significantly related.
-
-##### Interpretation
-
-The data provides statistically significant evidence to support the claim that sleep duration is significantly related to productivity level at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student get influences their productivity level.
+Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that college students' sleep duration and productivity level are significantly related. The data provides statistically significant evidence to support the claim that sleep duration is significantly related to productivity level at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student get influences their productivity level.
 
 ## Discussion
 
