@@ -74,7 +74,7 @@ Other than directly sending to our friends at Smith, we posted it on Smith Confe
 -   Number of variables: 6 in total, 2 in use
     -   `weekday_sleep_average` (hours)
     -   `weekday_productivity_level`
--   Type of Variables: Categorical and Ordinal
+-   Type of Variables: Ordinal Catgeorical
 
 #### Data Wrangling
 
