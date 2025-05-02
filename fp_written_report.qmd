@@ -145,7 +145,7 @@ Since `weekday_sleep_average` and `weekday_productivity_level` are both **catego
 
 ```{r}
 #| label: tbl-sleep-productivity
-#| tbl-cap: "Sleep Duration vs. Productivity Level Observed Values"
+#| tbl-cap: "Sleep Duration vs. Productivity Level of College Students"
 #| echo: false
 #| message: false
 #| warning: false
@@ -212,7 +212,7 @@ If `weekday_sleep_average` and `weekday_productivity_level` are truly independen
 
 ```{r}
 #| label: tbl-sleep-productivity-expected
-#| tbl-cap: "Sleep Duration vs. Productivity Level Expected Counts"
+#| tbl-cap: "Sleep Duration vs. Productivity Level of College Students Expected Counts"
 #| echo: false
 #| message: false
 #| warning: false
