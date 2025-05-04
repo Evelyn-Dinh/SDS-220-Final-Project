@@ -209,7 +209,7 @@ expected_counts <- chi_square_test$expected
 kable(round(expected_counts, 2))
 ```
 
-For the **Large Sample** condition, there are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected. Thus, Large Sample condition for Two-Way Table Test of Independence not met.
+For the **Large Sample** condition, there are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected. Thus, Large Sample condition for Two-Way Table Test of Independence is not met.
 
 **Note**: Because of both conditions not met, the test statistics $\chi^2$ may not have a Chi-squared Distribution. However, we will still run the Two-Way Table Inference of Independence.
 
