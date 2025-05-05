@@ -1,5 +1,5 @@
 ---
-title: "Does Sleep Duration Influence Productivity Level of College Students?"
+title: "Does Weekday Sleep Duration Influence Productivity Level of College Students?"
 author: "Evelyn Dinh & Sophie Biderman"
 format: pdf
 editor: source
@@ -36,7 +36,7 @@ sleep_productivity <- sleep_productivity_stress |>
 
 Imagine waking up after only a few hours of sleep, then dragging your tired body through hours of coursework, assignments, and even exams! Now imagine doing that mostly everyday, for a duration of months? According to @averagesleepduration and @recommendedsleep, most college students only get 6-6.9 hours of sleep per day on average while the recommended amount for college students is 7-9 hours. Even though it is understandable that there are certain deadlines, exams, or just work generally that seems to be more important than few extra hours of sleep, this constant trade-off may lead to unexpected consequences to both their physical and mental health.
 
-This project aims to investigate the relationship between sleep duration and one of the most crucial aspects of any college student's life: their productivity. Our research question is **"Does the amount of sleep a college student gets influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Through understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
+This project aims to investigate the relationship between sleep duration and one of the most crucial aspects of any college student's life: their productivity. Our research question is **"Does the amount of sleep a college student gets during weekday influence their productivity level?"**. As college students ourselves, our goal is to discover possible patterns of college students' sleep duration and whether it significantly accounts for our academic and work productivity throughout the week. Through understanding such connection, we can devise our own solutions to improve our college life inside-out, both academically and personally.
 
 The data for this study was collected through a survey on Google Form. Our target population is college students, and our sample included students from different colleges such as Smith College, Amherst College, UMASS Amherst, etc. We mainly used a convenience sampling method, gathering many of our survey responses from our friends and acquaintances who are college students. We are investigating whether the amount of sleep a college student gets influence their productivity using **Two-Way Table Test of Independence** with **Chi-square Distribution**.
 
@@ -183,11 +183,11 @@ It is noticeable that college students who sleep 5-7 hours make up the majority 
 
 #### Type of Test
 
-Since college students' weekday average sleep duration and their weekday average productivity level are both **categorical variables** with each of them have 3 categories, we use inference of two-way tables. Therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
+Since college students' weekday sleep duration and their productivity level are both **categorical variables** with each of them have 3 categories, we use inference of two-way tables. Therefore we are using the **Two-Way Table Test of Independence** with **Chi-square Distribution** through the **Mathematical Model**.
 
 #### Hypotheses
 
-Our null hypothesis $H_0$ is that college students' sleep duration and productivity level are independent. Our alternative hypothesis is that college students' sleep duration and productivity level are dependent.
+To investigate whether the amount of sleep a college student gets during weekday influence their productivity level, our null hypothesis $H_0$ is that college students' weekday sleep duration and productivity level are independent. Our alternative hypothesis $H_A$ is that college students' weekday sleep duration and productivity level are dependent.
 
 #### Conditions
 
@@ -195,7 +195,7 @@ The Conditions for Two-Way Table Test of Independence include **Independence**, 
 
 For the **Independence** condition, the use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits. Thus, Independence condition for Two-Way Table Test of Independence is not met.
 
-If college students' weekday average sleep duration and their weekday average productivity level are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be as following.
+If college students' weekday sleep duration and productivity level are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be as following.
 
 ```{r}
 #| label: tbl-sleep-productivity-expected
@@ -241,7 +241,6 @@ curve(dchisq(x, df = 4), col = 'black',  from = 0,to = 25,
       xlab = "", ylab = "", xaxt = "n",  yaxt = "n")
 ```
 
-
 ##### p-value Mathematical Model Plot
 
 ```{r}
@@ -263,11 +262,11 @@ abline(v = test_stat, col = "red", lwd = 2)
 
 Given that we only take the shaded right tail area, as shown in @fig-chi-square-p-value, to calculate our p-value, our $p-value = .006615$. This means that the probability that we observe our $\chi^2$ as large as $14.223$ or larger is $.006615$.
 
-We choose our significance level $\alpha = .01$ to control the Type 1 error rate in which we concluded that college students' sleep duration and productivity level are dependent when they are in fact independent.
+We choose our significance level $\alpha = .01$ to control the Type 1 error rate in which we concluded that college students' weekday sleep duration and productivity level are dependent when they are in fact independent.
 
 ##### Conclusion & Interpretation
 
-Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that college students' sleep duration and productivity level are significantly related. The data provides statistically significant evidence to support the claim that sleep duration is significantly related to productivity level at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student get influences their productivity level.
+Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that college students' weekday sleep duration and productivity level are significantly dependent. The data provides statistically significant evidence to support the claim that college students' weekday productivity level is significantly dependent on their sleep duration at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student get during weekday influences their productivity level.
 
 ## Discussion
 
