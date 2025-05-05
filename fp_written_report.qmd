@@ -193,7 +193,7 @@ To investigate whether the amount of sleep a college student gets during weekday
 
 The Conditions for Two-Way Table Test of Independence include **Independence**, in which the data values were collected were from a random sample, and **Large Sample**, in which $e_{i,j} \geq 5$ for each cell.
 
-For the **Independence** condition, the use of convenience sampling method may introduce certain dependence among observations. For example, students from the same social circles or colleges may share common traits, behaviors, or habits. Thus, Independence condition for Two-Way Table Test of Independence is not met.
+For the **Independence** condition, the use of convenience sampling method may introduce certain dependence among observations by overrepresenting students from certain social circles or colleges, potentially skewing the results. For example, students from the same social circles or colleges may share common traits, behaviors, or habits. Thus, Independence condition for Two-Way Table Test of Independence is not met.
 
 If college students' weekday sleep duration and productivity level are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be as following.
 
@@ -211,7 +211,7 @@ kable(round(expected_counts, 2))
 
 For the **Large Sample** condition, there are 2 expected counts that do not meet the criteria of $e_{i,j} \geq 5$ - $e_{2,1}$ and $e_{3,1}$ - as shown in @tbl-sleep-productivity-expected. Thus, Large Sample condition for Two-Way Table Test of Independence is not met.
 
-**Note**: Because of both conditions not met, the test statistics $\chi^2$ may not have a Chi-square Distribution. However, we will still run the Two-Way Table Inference of Independence.
+**Note**: Because of both conditions not met, the test statistics $\chi^2$ may neither have a Chi-square Distribution nor be accurate, meaning that our calculated p-value may not be accurate. If it is smaller than it should be, we may be more likely to reject the null hypothesis when it is true, which is a Type 1 error. If it is bigger than it should be, we may be more likely to fail to reject the null hypothesis when the alternative hypothesis is true, which is a Type 2 error. However, we will still run the Two-Way Table Inference of Independence.
 
 #### Chi-Square Testing
 
@@ -228,8 +228,6 @@ print(chi_square_test)
 
 Assuming that conditions for the Mathematical Model of the Two-Way Table Test of Independence are met and $H_0$ is true, our test statistic $\chi^2 = 14.223$, which is a ratio of how the observed counts vary from the expected counts as compared to the expected counts, has a **Chi-square Distribution** with the parameter **degrees of freedom** having the value of $df = (R-1)(C-1) = (3-1)(3-1) = 4$ in which R represents the number of rows and C represents the number of columns.
 
-Our null distribution, as shown in @fig-chi-square, is a **Chi-square Distribution** which is always right-skewed, only has positive values, and has a parameter of $df = 4$. The degree of freedom changes the shape of the Chi-square distribution in which the higher the degrees of freedom, the less skewed, more symmetric, more spread the distribution will be, and the further will the peak shift rightward.
-
 ```{r}
 #| label: fig-chi-square
 #| fig-cap: "Chi-square Distribution of df = 4"
@@ -240,6 +238,8 @@ Our null distribution, as shown in @fig-chi-square, is a **Chi-square Distributi
 curve(dchisq(x, df = 4), col = 'black',  from = 0,to = 25, 
       xlab = "", ylab = "", xaxt = "n",  yaxt = "n")
 ```
+
+Our null distribution, as shown in @fig-chi-square, is a **Chi-square Distribution** which is always right-skewed, only has positive values, and has a parameter of $df = 4$. The degree of freedom changes the shape of the Chi-square distribution.
 
 ##### p-value Mathematical Model Plot
 
@@ -282,6 +282,6 @@ Although our results can not be generalized to the population of interest, they 
 
 This is reaffirmed by the results of another related analysis of medical students in @hassan2023relationship. Variables collected include sleep quality, as measured by the Pittsburgh Sleep Quality Index, levels of depression and anxiety, as scored on the Hamilton Depression (or Anxiety) Rating Scales, respectively, and academic performance scores. @hassan2023relationship concluded that poor sleep quality is correlated with higher levels of depression and anxiety, which in turn correlates negatively with academic performance. Once again, the published literature reaffirms our finding that getting less sleep diminishes a student’s ability to perform productively.
 
-Many other analyses could be conducted with the data we gathered using this form. These other variables dictate the most feasible and convenient possible future extensions to this research project. Our Google Form collected a total of six variables, only two of which were used for the statistical analysis conducted above. The variables we did not use include class year, major division, whether the respondent considers themselves an early bird or a night owl, and stress level (as a categorical variable formulated similarly to those used in the analysis carried out above). Based on these variables, we could consider examining whether stress (or productivity) levels vary based on major division or class year. We could also evaluate whether being an early bird or a night owl is correlated with higher or lower stress or productivity levels. Beyond the scope of the dataset we have collected, we could consider using random sampling to select colleges throughout the world from which to collect data, and then randomly sample students enrolled there in order to compile a larger and more robust data set. Statistical analyses of this dataset would yield results generalizable to the entire target population of college students.
+Many other analyses could be conducted with the data we gathered using this form. These other variables dictate the most feasible and convenient possible future extensions to this research project. Our Google Form collected a total of six variables, only two of which were used for the statistical analysis conducted above. The variables we did not use include class year, major division, whether the respondent considers themselves an early bird or a night owl, and stress level (as a categorical variable formulated similarly to those used in the analysis carried out above). Based on these variables, we could consider examining whether stress (or productivity) levels vary based on major division or class year. We could also evaluate whether being an early bird or a night owl is correlated with higher or lower stress or productivity levels. Beyond the scope of the dataset we have collected, we could consider using random sampling to select colleges throughout the world from which to collect data, and then randomly sample students enrolled there in order to compile a larger and more robust data set. Statistical analyses of such dataset would yield results generalizable to the entire target population of college students.
 
 ## Bibliography
