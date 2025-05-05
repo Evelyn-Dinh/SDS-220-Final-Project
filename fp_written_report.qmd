@@ -195,7 +195,7 @@ The Conditions for Two-Way Table Test of Independence include **Independence**, 
 
 For the **Independence** condition, the use of convenience sampling method may introduce certain dependence among observations by overrepresenting students from certain social circles or colleges with similar traits, behaviors, or habits, potentially skewing the results. Thus, Independence condition for Two-Way Table Test of Independence is not met.
 
-If college students' weekday sleep duration and productivity level are truly independent under the null hypothesis $H_0$ of independence, our expected count values for all cells would be as following.
+If college students' weekday sleep duration and productivity level are truly independent under the null hypothesis $H_0$ of independence, our expected count - the frequency that would be expected in a cell - for all cells would be as following.
 
 ```{r}
 #| label: tbl-sleep-productivity-expected
