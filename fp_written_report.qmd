@@ -70,7 +70,7 @@ In addition to requesting participation in our survey from our friends at Smith,
 
 We collected **90 responses** i.e. observations through our survey for **6 variables** in total, including major division, class year, whether the respondent is an early bird or a night owl, their average amount of sleep during weekdays in hours, their average productivity level during weekdays.
 
-We used **2 variables** - average amount of sleep during weekdays in hours and average productivity level during weekdays. Specifically, we consider the weekday average amount of sleep our **explanatory variable** and the weekday average productivity level our **response variable**. Both variables are **ordinal** and **categorical**. 
+We used **2 variables** - average amount of sleep during weekdays in hours and average productivity level in specific scales during weekdays. Specifically, we consider the weekday average amount of sleep our **explanatory variable** and the weekday average productivity level our **response variable**. In our survey, we simplified the options for amount of sleep during weekdays and weekday productivity level by dividing them into 3 categories. Both variables are **ordinal** and **categorical**. 
 
 #### Data Wrangling
 
