@@ -266,7 +266,7 @@ We choose our significance level $\alpha = .01$ to control the Type 1 error rate
 
 ##### Conclusion & Interpretation
 
-Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that college students' weekday sleep duration and productivity level are significantly dependent. The data provides statistically significant evidence to support the claim that college students' weekday productivity level is significantly dependent on their sleep duration at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student get during weekday influences their productivity level.
+Our $p-value = .006615$ is smaller than $\alpha = .01$, therefore we reject the null hypothesis. We conclude that college students' weekday sleep duration and productivity level are significantly dependent. The data provides statistically significant evidence to support the claim that college students' weekday productivity level is dependent on their sleep duration at $\alpha = .01$ significance level. Therefore, it is reasonable to believe that the amount of sleep a college student gets during weekday influences their productivity level.
 
 ## Discussion
 
