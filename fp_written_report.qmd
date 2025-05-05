@@ -177,7 +177,7 @@ sleep_productivity_stress |>
 
 @tbl-sleep-productivity and the corresponding @fig-sleep-productivity shows the distribution of the observed values of productivity levels across different sleep duration. 
 
-It is noticeable that college students who sleep 5-7 hours make up the majority of "somewhat productive" group with 29 students while those who sleep less than 5 hours have the highest number of individuals in the "very productive" group with 12 students For both the "not productive" and "very productive" group, the number of college students sleeping 5-7 hours and more than 7 hours is the same. Surprisingly, in the "not productive" category, 7 students each reported sleeping 5-7 hours and more than 7 hours, both are significantly higher than the number of students sleeping less than 5 hours, which was only 1.
+It is noticeable that college students who sleep 5-7 hours on average make up the majority of "somewhat productive" group with 29 students while those who sleep less than 5 hours on average have the highest number of individuals in the "very productive" group with 12 students For both the "not productive" and "very productive" group, the number of college students sleeping 5-7 hours and more than 7 hours on average is the same. Surprisingly, in the "not productive" category, 7 students each reported sleeping 5-7 hours and more than 7 hours on average, both are significantly higher than the number of students sleeping less than 5 hours on average, which was only 1.
 
 ## Results
 
